@@ -1,7 +1,7 @@
 import { Inngest } from "inngest";
 import { connectDB } from "./db.js";
 
-const inngest = new Inngest({ id : "video-calling-platform" });
+export const inngest = new Inngest({ id : "video-calling-platform" });
 
 const syncUser = inngest.createFunction(
     {id : "sync/clerk-user-created"},
