@@ -12,7 +12,7 @@ app.use(express.json());
 
 const __dirname = path.resolve();
 
-app.get("/", (req, res) => {
+app.get("/health", (req, res) => {
   res.json({ message: "api is up and running" });
 });
 

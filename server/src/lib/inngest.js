@@ -1,5 +1,6 @@
 import { Inngest } from "inngest";
 import { connectDB } from "./db.js";
+import User from "../model/User.js";
 
 export const inngest = new Inngest({ id : "video-calling-platform" });
 
