@@ -5,16 +5,22 @@ import cors from "cors";
 import { inngest , functions} from "./lib/inngest.js";
 import { serve } from "inngest/express";
 import path from "path";
+import { clerkMiddleware } from "@clerk/express";
+import { protectedRoute } from "./middleware/protectedRoute.js";
 
 const app = express();
 app.use(express.json());
 
+app.use(clerkMiddleware());
+
 
 const __dirname = path.resolve();
 
-app.get("/health", (req, res) => {
+app.get("/h", (req, res) => {
   res.json({ message: "api is up and running" });
 });
+
+
 
 
 app.use("/api/inngest" , serve({ client : inngest, functions}));
