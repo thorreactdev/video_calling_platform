@@ -7,6 +7,9 @@ import { serve } from "inngest/express";
 import path from "path";
 import { clerkMiddleware } from "@clerk/express";
 import { protectedRoute } from "./middleware/protectedRoute.js";
+import chatRoute from "./routes/chatRoute.js";
+
+
 
 const app = express();
 app.use(express.json());
@@ -19,6 +22,8 @@ const __dirname = path.resolve();
 app.get("/h", protectedRoute, (req, res) => {
   res.json({ message: "api is up and running" });
 });
+
+app.use("/api/chat",chatRoute);
 
 
 
