@@ -19,7 +19,7 @@ app.get("/health", (req, res) => {
 
 app.use("/api/inngest" , serve({ client : inngest, functions}));
 app.use(express.static(path.join(__dirname, "/client/dist")));
-app.get("/{*any}", () => {
+app.get("/{*any}", (req,res) => {
   res.sendFile(path.join(__dirname, "client" , "dist" , "index.html"));
 });
 
