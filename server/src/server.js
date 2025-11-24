@@ -16,7 +16,7 @@ app.use(clerkMiddleware());
 
 const __dirname = path.resolve();
 
-app.get("/h", (req, res) => {
+app.get("/h", protectedRoute, (req, res) => {
   res.json({ message: "api is up and running" });
 });
 
