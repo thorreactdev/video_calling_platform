@@ -8,10 +8,7 @@ import path from "path";
 
 const app = express();
 app.use(express.json());
-app.use(cors({
-  origin : ENV.CLIENT_URL,
-  credentials: true
-}))
+
 
 const __dirname = path.resolve();
 
