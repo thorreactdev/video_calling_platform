@@ -8,6 +8,7 @@ import path from "path";
 import { clerkMiddleware } from "@clerk/express";
 import { protectedRoute } from "./middleware/protectedRoute.js";
 import chatRoute from "./routes/chatRoute.js";
+import sessionRoute from "./routes/sessionRoute.js";
 
 
 
@@ -24,6 +25,7 @@ app.get("/h", protectedRoute, (req, res) => {
 });
 
 app.use("/api/chat",chatRoute);
+app.use("/api/sessions",sessionRoute);
 
 
 
